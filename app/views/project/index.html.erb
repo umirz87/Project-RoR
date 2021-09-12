@@ -1,0 +1,19 @@
+<% @project.each do |project|%>
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">Project Name</th>
+      <th scope="col">Manager ID</th>
+      <th scope="col">Manager Name</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td> <%= project.name_of_project %></td>
+      <td> <%= project.managerid %></td>
+      <td> <%= project.name_of_manager %></td>
+    </tr>
+  </tbody>
+</table>
+<%end%>
+

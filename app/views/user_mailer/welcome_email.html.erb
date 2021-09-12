@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1>Welcome to Lead Management, <%= @user.name %></h1>
+    <p>
+    Steps:
+    </p>
+    <p>
+    1)First Login to your account
+    </p>
+    <p> 
+    2)Then click on the link below to Accept phase or add comments
+    </p>
+    <p>
+         http://localhost:3000/leads/<%=@lead.id%>/phases/<%=@phase.id%>/buttonview
+    </p>
+  </body>
+</html>

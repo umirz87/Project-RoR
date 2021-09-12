@@ -1,0 +1,9 @@
+<%= form_with model: @user do |form| %>
+    <div>
+      <%= form.label :id %><br>
+      <%= form.collection_select(:user, User.with_role(:Engineer, current_user), :id, :name,{},{class: "form-control"}) %>
+    </div>
+    <div class="btn btn-dark">
+      <%= form.submit%>
+    </div>
+  <% end %>

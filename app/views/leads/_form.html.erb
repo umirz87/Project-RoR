@@ -1,0 +1,50 @@
+<%= form_with model: @lead do |form| %>
+  <div class="field form-group">
+    <%= form.label :project_name%><br>
+    <%= form.text_field :project_name,class:"form-control" %>
+  </div>
+
+  <div>
+  <%= form.label :client_name %><br>
+  <%= form.text_field :client_name,class:"form-control" %>
+  </div>
+
+  <div class="field form-group">
+  <%= form.label :client_address%><br>
+  <%= form.text_field :client_address ,class:"form-control"%>
+  </div>
+
+  <div class="field form-group">
+  <%= form.label :client_email %><br>
+  <%= form.text_field :client_email ,class:"form-control"%>
+  </div>
+
+  <div class="field form-group">
+  <%= form.label :client_contact %><br>
+  <%= form.text_field :client_contact,class:"form-control" %>
+  </div>
+
+  <div class="field form-group">
+  <%= form.label :platform_used %><br>
+  <%= form.text_field :platform_used ,class:"form-control"%>
+  </div>
+  
+  <div class="field form-group">
+  <%= form.label :test_type %><br>
+  <%= form.text_field :test_type ,class:"form-control"%>
+  </div>
+
+  <div class="field">
+  <%= form.label :status %><br>
+  <%= form.select :status,["generate","InProgress","Completed"],{},{class: "form-control"} %>
+  </div>
+
+  <div class="field form-group">
+  <%= form.hidden_field :user_id, value: current_user.id %>
+  </div>
+
+  <br>
+  <div  class="btn btn-dark">
+    <%= form.submit%>
+  </div>
+<% end %>

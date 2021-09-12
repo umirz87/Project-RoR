@@ -1,0 +1,19 @@
+<div class="jumbotron">
+  <h1 class="display-4">Lead Information</h1>
+  <strong>Project Name : </strong><%= @lead.project_name %><br>
+  <strong>Lead ID : </strong><%= @lead.id %><br>
+  <strong>Client Name : </strong><%= @lead.client_name %><br>
+  <strong>Status : </strong><%= @lead.status %><br><br>
+  <%= link_to "Marks as Sale", getproject_lead_path(@lead),class:"btn btn-dark" %>
+  <%= link_to "Edit", edit_lead_path(@lead),class:"btn btn-primary" %>
+  <%= link_to "Destroy", lead_path(@lead),
+                  method: :delete,
+                  data: { confirm: "Are you sure?" },class:"btn btn-danger" %>
+</div>
+<%= render @lead.phases %>
+
+<h2>Add Phases </h2>
+<%=render 'phases/form1'%>
+
+  
+

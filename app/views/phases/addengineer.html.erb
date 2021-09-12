@@ -1,0 +1,25 @@
+ <table class="table table">
+  <thead>
+    <tr>
+      <th scope="col"> Enginner Name</th>
+      <th scope="col">Phase Id</th>
+    </tr>
+  </thead>
+ <tbody>
+    <% @phase.user_phases.each do |phase|%>
+       <tr>
+          <td><%= phase.user_id %></td>
+          <td><%= phase.phase_id %></td>
+        </tr>
+    <%end%> 
+          </tbody>
+          </table>
+<%= form_with model: @user do |form| %>
+    <div>
+      <%= form.label :id %><br>
+      <%= form.collection_select(:user, User.with_role(:Engineer, current_user), :id, :name,{},{class: "form-control"}) %>
+    </div>
+    <div class="btn btn-dark">
+      <%= form.submit%>
+    </div>
+  <% end %>

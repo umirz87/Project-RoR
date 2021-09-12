@@ -1,0 +1,42 @@
+<%if user_signed_in?%>
+<div class="card text-center">
+  <div class="card-header">
+    <ul class="nav nav-tabs card-header-tabs">
+      <li class="nav-item">
+        <a class="nav-link active" href="#">New</a>
+      </li>
+    </ul>
+  </div>
+  <div class="card-body">
+    <li class="btn btn-success " >
+    <%= link_to "Generate Lead",
+    new_lead_path,
+    class:"btn btn-success" %>
+    </li>
+    <li class="btn btn-secondary" >
+    <%= link_to "Show Leads",
+   leads_path,
+   class:"btn btn-secondary" %>
+    </li>
+  </div>
+</div>
+<br/>
+<br>
+<div class="card text-center">
+  <div class="card-header">
+    <ul class="nav nav-tabs card-header-tabs">
+      <li class="nav-item">
+        <a class="nav-link active" href="#">Show</a>
+      </li>
+    </ul>
+  </div>
+  <div class="card-body">
+    <h5 class="card-title">ALL LEADS</h5>  
+    <li class="btn btn-dark">
+    <%= link_to "Projects",
+    project_path,
+    class:"btn btn-dark" %>
+    </li>
+  </div>
+</div>
+<%end%>

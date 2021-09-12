@@ -1,0 +1,39 @@
+<%= form_with model: [@lead , phase ] do |form| %>
+    <div>
+      <%= form.label :managerid %><br>
+      <%= form.collection_select(:managerid, User.with_role(:Technical_Manager, current_user), :id, :name,{},{class: "form-control"}) %>
+    </div>
+  
+    <div class="field form-group">
+      <%= form.label :name_of_manager%><br>
+      <%= form.text_field :name_of_manager,class:"form-control" %>
+    </div>
+  
+    <div class="field form-group">
+    <%= form.label :test_type %><br>
+    <%= form.text_field :test_type ,class:"form-control"%>
+    </div>
+  
+    <div class="field form-group">
+    <%= form.label :BD_id%><br>
+    <%= form.text_field :BD_id,class:"form-control" %>
+    </div>
+  
+    <div class="field form-group">
+    <%= form.label :due_date %><br>
+    <%= form.text_field :due_date,class:"form-control" %>
+    </div>
+  
+    <div class="field form-group">
+    <%= form.label :status %><br>
+    <%= form.select :status, ["created","InProgress","Completed"],{},{class: "form-control"} %>
+    </div>
+    
+    <div class="field form-group">
+    <%= form.hidden_field :lead_id, value: @lead.id %>
+    </div>
+
+    <div class="btn btn-dark">
+      <%= form.submit %>
+    </div>
+  <% end %>

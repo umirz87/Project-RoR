@@ -1,0 +1,14 @@
+<h1>Leads</h1>
+
+<ul>
+  <% @leads.each do |lead| %>
+    <li>
+    <%if lead.id!=1%>
+    <%= link_to lead.project_name, lead ,class:"font-weight-bold" %>
+    <%else%>
+    <h2>List</h2>
+   <%end%>
+    </li>
+    
+  <% end %>
+</ul>

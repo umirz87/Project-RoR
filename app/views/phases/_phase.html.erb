@@ -1,0 +1,42 @@
+
+  <table class="table table">
+  <thead>
+    <tr>
+      <th scope="col"> ID</th>
+      <th scope="col">Manager Name</th>
+      <th scope="col">test_type</th>
+      <th scope="col">due_date</th>
+      <th scope="col">Status</th>
+      <th scope="col">Manage Engineer</th>
+      <th scope="col">Edit</th>
+      <th scope="col"def update
+        @lead = Lead.find(params[:lead_id])
+        @phase = @lead.phases.find(params[:id])
+    
+        if @lead.phases.update(phase_params)
+          redirect_to @lead
+        else
+          render :edit
+        end
+      end>Delete</th>
+        <th scope="col">Comments</th>
+    </tr>
+  </thead>
+      <tbody>
+       <tr>
+          <td> <%= phase.managerid %></td>
+          <td><%= phase.name_of_manager %></td>
+          <td><%= phase.test_type %></td>
+          <td><%= phase.due_date %></td>
+          <td><%= phase.status %></td>
+          <td><%= link_to "Manage Engineers",[:addengineer,phase.lead, phase],class:"btn btn-dark" %></td>
+          <td><%= link_to "Edit",[:edit,phase.lead, phase],class:"btn btn-primary" %></td>
+          <td><%= link_to 'Delete', [phase.lead, phase],
+              method: :delete,
+              data: { confirm: "Are you sure?" },class:"btn btn-danger" %>
+              </td>
+          </tr>
+          </tbody>
+          </table>
+
+       
